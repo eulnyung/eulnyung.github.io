@@ -152,3 +152,21 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 .editorial-page--references p { margin-block-end: .75rem; }
 .editorial-page--references .reference-url { font-size: .8125rem; line-height: 1.5; margin-block-end: .65rem; }
 .reference-link { overflow-wrap: anywhere; }
+
+/* Compact reflowable rhythm: natural heights, shared rules, unchanged type sizes. */
+.post-content {
+  --page-padding: clamp(1.1rem, 4%, 1.84rem);
+}
+.post-content .editorial-page:not(.editorial-page--references) > p,
+.post-content .editorial-page .editorial-visual__text > p { margin-block-end: 1.0625rem; }
+.post-content .editorial-page blockquote { margin-block: 1.7rem; }
+.post-content .editorial-page:not(.editorial-page--references) h1 { margin-block: .6em; }
+.post-content .editorial-page:not(.editorial-page--references) h2 { margin-block: .75em; }
+.post-content .editorial-page .running-header { margin-block-end: 1.8rem; }
+.post-content .editorial-page--pause { padding-block-end: calc(var(--page-padding) + 1.8rem); }
+.post-content .editorial-page--pause > .running-header { margin-block-end: 3.6rem; }
+.post-content .editorial-page .editorial-visual { margin-block: 1.7rem; }
+/* Keep narrow wide visuals near full width; preserve the established wide preset. */
+.post-content .editorial-page .editorial-visual--wide { max-width: 85%; }
+.post-content .editorial-page .editorial-visual__notes { padding-block: .65rem; line-height: 1.5; }
+.post-content .editorial-page .editorial-visual__notes p { margin-block-end: .45rem; }
