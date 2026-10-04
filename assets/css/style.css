@@ -183,3 +183,21 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
   white-space: nowrap;
   border: 0;
 }
+
+/* Optional reader-facing record card; absent metadata adds no layout box. */
+.work-info { max-width: var(--reading-width); margin: -2rem auto 2rem; color: var(--muted); font-size: .875rem; line-height: 1.7; }
+.work-info--internal-title { margin-block: 0 1.5rem; }
+.work-info > summary { display: flex; align-items: center; justify-content: center; width: 2.75rem; min-height: 2.75rem; margin-inline-start: 0; cursor: pointer; list-style: none; border-radius: 50%; }
+.work-info > summary::-webkit-details-marker { display: none; }
+.work-info > summary span { font-size: 1.125rem; line-height: 1; }
+.work-info > summary:hover, .work-info[open] > summary { background: var(--sheet); color: var(--ink); }
+.work-info__card { max-width: calc(var(--reading-width) * .6); padding-block: 1.25rem .25rem; border-block-start: 1px solid var(--rule); }
+.work-info__card h2 { margin: 0 0 .75rem; color: var(--muted); font-size: .875rem; font-weight: normal; }
+.work-info__card h3, .work-info__card dt { margin: 0 0 .25rem; font-family: inherit; font-size: .75rem; font-weight: normal; line-height: 1.7; }
+.work-info__card dl { margin: 0; }
+.work-info__card dl > div, .work-info__card section { margin-block-end: 1.25rem; }
+.work-info__card dd { margin: 0; }
+.work-info__card ul { margin: 0; padding: 0; list-style: none; }
+.work-info__card li + li { margin-block-start: .75rem; }
+.work-info__card p { margin: .25rem 0 0; white-space: pre-line; }
+.work-info__kind { font-size: .75rem; }
