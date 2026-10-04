@@ -115,6 +115,9 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 }
 .editorial-page .editorial-visual--left, .post-content > .editorial-visual--left { margin-inline: 0 auto; }
 .editorial-visual--center { margin-inline: auto; }
+/* Pineapple COVER: narrower on mobile; keep the established third width on desktop. */
+.editorial-visual--pineapple-cover { width: 70%; }
+@container (min-width: 36rem) { .editorial-visual--pineapple-cover { width: 33.333333%; } }
 .editorial-page .editorial-visual--right, .post-content > .editorial-visual--right { margin-inline: auto 0; }
 @container visual (min-width: 36rem) {
   .editorial-visual__composition--split { --visual-part: 1fr; --text-part: 1fr; grid-template-columns: minmax(0, var(--visual-part)) minmax(0, var(--text-part)); }
