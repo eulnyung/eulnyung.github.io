@@ -79,6 +79,7 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 .post-dates { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .8125rem; color: var(--muted); }
 .post-dates div { display: flex; gap: .5rem; }
 .post-dates dd { margin: 0; }
+.post-tags li::before { content: "#"; }
 .post-tags { display: flex; flex-wrap: wrap; gap: .5rem 1rem; font-size: .8125rem; color: var(--muted); }
 /* Unstructured Markdown never splits arbitrarily into columns. */
 .post-content > :not(.editorial-spread) { max-width: var(--reading-width); margin-inline: auto; }
@@ -134,12 +135,9 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 .publication-preview { width: 100%; max-height: 20rem; object-fit: contain; margin-block-end: 1rem; }
 
 /* Article folios follow rendered Editorial Pages, never COVER or home panels. */
-/* Reset inside the stream: its inline-size container scopes counters on the root. */
-.post-content::before { content: ""; display: block; counter-reset: editorial-folio; }
-.post-content .editorial-spread > .editorial-page { counter-increment: editorial-folio; }
-.post-content .editorial-spread > .editorial-page::after {
-  content: counter(editorial-folio, decimal-leading-zero);
+.post-content .editorial-spread > .editorial-page > .editorial-folio {
   display: block;
+  max-width: none;
   margin-block-start: 1.5rem;
   color: var(--muted);
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
@@ -148,7 +146,7 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
   text-align: left;
 }
 @container editorial (min-width: 66rem) {
-  .post-content .editorial-spread > .editorial-page:nth-child(even)::after { text-align: right; }
+  .post-content .editorial-spread > .editorial-page:nth-child(even) > .editorial-folio { text-align: right; }
 }
 /* Reference explanations and URLs have separate, compact reading roles. */
 .editorial-page--references { font-size: .875rem; line-height: 1.65; }
