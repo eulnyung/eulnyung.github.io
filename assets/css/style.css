@@ -214,10 +214,19 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 .publication-entry h2 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 
 /* Reader-facing credit belongs to the article, after all body content. */
-.article-image-credit { max-width: var(--reading-width); margin: 2rem auto 0; color: var(--muted); font-size: .75rem; line-height: 1.6; }
+.article-credit-grid { --page-padding: clamp(1.1rem, 4%, 1.84rem); margin-block-start: 2rem; }
+.article-image-credit { width: 100%; max-width: 46rem; padding-inline: var(--page-padding); margin: 0 auto; color: var(--muted); font-size: .75rem; line-height: 1.6; }
 
 /* A present-day afterword, kept separate from the original voice. */
 .author-note { max-width: var(--reading-width); margin: 3rem auto 2rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--rule); color: var(--muted); font-size: .9375rem; line-height: 1.85; }
 .author-note__label { margin-block-end: .5rem; font-size: .75rem; }
 .author-note .author-note__title { margin: 0 0 1rem; font-size: 1.125rem; font-weight: normal; }
 .author-note__body > :last-child { margin-block-end: 0; }
+
+@container editorial (min-width: 66rem) {
+  .article-image-credit { max-width: none; margin-inline: 0; }
+}
+/* The archive opening fits a split inside a spread page at reading width. */
+@container visual (min-width: 28rem) {
+  .post[data-publication-no="0004"] [data-visual-id="V01"] > .editorial-visual__composition--split { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+}
