@@ -134,8 +134,10 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 .publication-number, .publication-list time { color: var(--muted); font-size: .8125rem; }
 .publication-grid { list-style: none; padding: 0; }
 .publication-cover { display: block; width: fit-content; max-width: 100%; margin: 0 auto 1.5rem; }
-.publication-preview { width: min(70vw, 18rem); max-width: 100%; aspect-ratio: 3 / 4; object-fit: contain; }
-.publication-grid--archive .publication-preview { width: min(60vw, 12rem); }
+.publication-entry { --publication-preview-width: min(70vw, 18rem); }
+.publication-info { width: var(--publication-preview-width); max-width: 100%; margin-inline: auto; text-align: left; }
+.publication-preview { width: var(--publication-preview-width); max-width: 100%; aspect-ratio: 3 / 4; object-fit: contain; }
+.publication-grid--archive .publication-entry { --publication-preview-width: min(60vw, 12rem); }
 .publication-entry h2 { margin-block: 0 1rem; }
 .publication-entry .publication-number { margin-block-end: .25rem; }
 .publication-entry time { color: var(--muted); font-size: .8125rem; }
@@ -229,4 +231,18 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 /* The archive opening fits a split inside a spread page at reading width. */
 @container visual (min-width: 28rem) {
   .post[data-publication-no="0004"] [data-visual-id="V01"] > .editorial-visual__composition--split { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+}
+
+/* Prologue keeps its original words and composition, with a quieter voice. */
+.post-content .editorial-page--prologue {
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "AppleMyungjo", "Batang", "바탕", serif;
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 2;
+}
+.post-content .editorial-page h2.editorial-original-title {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  font-weight: normal;
+  margin-block: .5rem 1.75rem;
+  text-wrap: balance;
 }
