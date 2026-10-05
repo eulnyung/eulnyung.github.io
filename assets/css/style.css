@@ -179,8 +179,8 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 .post-content .editorial-page .editorial-visual__notes { padding-block: .65rem; line-height: 1.5; }
 .post-content .editorial-page .editorial-visual__notes p { margin-block-end: .45rem; }
 
-/* Opt-in visual title pages keep the article header available to assistive tech. */
-.visually-hidden, .post-header--visually-hidden {
+/* Visually hidden titles remain available to assistive technology. */
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -194,7 +194,6 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 
 /* Optional reader-facing record card; absent metadata adds no layout box. */
 .work-info { max-width: var(--reading-width); margin: -2rem auto 2rem; color: var(--muted); font-size: .875rem; line-height: 1.7; }
-.work-info--internal-title { margin-block: 0 1.5rem; }
 .work-info > summary { display: flex; align-items: center; justify-content: center; width: 2.75rem; min-height: 2.75rem; margin-inline-start: 0; cursor: pointer; list-style: none; border-radius: 50%; }
 .work-info > summary::-webkit-details-marker { display: none; }
 .work-info > summary span { font-size: 1.125rem; line-height: 1; }
@@ -209,3 +208,16 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
 .work-info__card li + li { margin-block-start: .75rem; }
 .work-info__card p { margin: .25rem 0 0; white-space: pre-line; }
 .work-info__kind { font-size: .75rem; }
+
+/* Publication titles: quiet at rest; body/reference links keep their underline. */
+.publication-entry h2 a { text-decoration: none; }
+.publication-entry h2 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+
+/* Reader-facing credit belongs to the article, after all body content. */
+.article-image-credit { max-width: var(--reading-width); margin: 2rem auto 0; color: var(--muted); font-size: .75rem; line-height: 1.6; }
+
+/* A present-day afterword, kept separate from the original voice. */
+.author-note { max-width: var(--reading-width); margin: 3rem auto 2rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--rule); color: var(--muted); font-size: .9375rem; line-height: 1.85; }
+.author-note__label { margin-block-end: .5rem; font-size: .75rem; }
+.author-note .author-note__title { margin: 0 0 1rem; font-size: 1.125rem; font-weight: normal; }
+.author-note__body > :last-child { margin-block-end: 0; }
