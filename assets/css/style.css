@@ -246,3 +246,21 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
   margin-block: .5rem 1.75rem;
   text-wrap: balance;
 }
+
+/* The original-era summary and signature precede the present-day note. */
+.post-content .editorial-summary {
+  padding: clamp(1rem, 4cqi, 1.5rem);
+  background: var(--paper);
+  border-block-start: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+.post-content .editorial-summary h3 { margin: 0 0 1.5rem; font-size: 1.25rem; font-weight: normal; }
+.post-content .editorial-summary > :last-child { margin-block-end: 0; }
+.post-content .editorial-page p.editorial-signature {
+  margin-block: 1.5rem 0;
+  color: var(--muted);
+  font-size: .8125rem;
+  text-align: right;
+}
