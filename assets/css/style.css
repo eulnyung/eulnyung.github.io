@@ -264,3 +264,10 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
   font-size: .8125rem;
   text-align: right;
 }
+
+/* Subordinate reading lives behind the work, after its complete ending. */
+.manuscript-afterword, .manuscript-return { margin-block-start: clamp(4rem, 8vw, 7rem); }
+.manuscript-links { margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.manuscript-links li + li { margin-block-start: .75rem; }
+.previous-manuscript .editorial-spread--standalone { grid-template-columns: minmax(0, 1fr); }
+.previous-manuscript .editorial-spread--standalone > .editorial-page { max-width: 46rem; }
