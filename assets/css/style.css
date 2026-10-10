@@ -113,6 +113,12 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
   .editorial-visual--wide { width: 85%; }
   .editorial-visual--half { width: 50%; }
   .editorial-visual--third { width: 33.333333%; }
+  /* 0007 V04: reduce the portrait diagram only when its page has enough room. */
+  .editorial-visual[data-visual-id="V04"] img[src$="/0007_trifold-structural-reading/V04.webp"] {
+    display: block;
+    width: 70%;
+    margin-inline: auto;
+  }
 }
 .editorial-page .editorial-visual--left, .post-content > .editorial-visual--left { margin-inline: 0 auto; }
 .editorial-visual--center { margin-inline: auto; }
