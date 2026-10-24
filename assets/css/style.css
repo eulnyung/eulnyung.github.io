@@ -91,6 +91,11 @@ th, td { padding: .5rem; border: 1px solid var(--rule); }
   .editorial-spread { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
   .editorial-page { max-width: none; border: 1px solid var(--rule); }
 }
+/* 0010's appended experiment remains distinct from its completed main text. */
+.post[data-publication-no="0010"] .editorial-page--afterword:is([data-page-id="P12"], [data-page-id="P13"]) {
+  background-color: #F2EEE6;
+  border-color: #D7CFC2;
+}
 @media print {
   .skip-link { display: none; }
   body { background: white; color: black; }
